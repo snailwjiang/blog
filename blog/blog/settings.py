@@ -124,10 +124,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
+#静态文件的路由
 STATIC_URL = '/static/'
 # 静态文件储存路径
 STATICFILES_DIRS=(os.path.join(BASE_DIR,'static'),)
+#上传文件的设置
+MEDIA_URL='/media/'
+
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 # 接受全部外部请求
 CORS_ORIGIN_ALLOW_ALL = True

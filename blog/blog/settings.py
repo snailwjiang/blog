@@ -166,3 +166,21 @@ CORS_ALLOW_HEADERS = (
 
 #生产token的秘钥
 JWT_TOKEN_KEY='Snail'
+
+SMS_ACCOUNT_ID='8aaf07087fe90a320180019f9c4a05b7'
+SMS_ACCOUNT_TOKEN='60cacad6353c4e9d9237fe92967472e8'
+SMS_TEMPLATE_ID='1'
+SMS_APP_ID='8aaf07087fe90a320180019f9da005be'
+
+#缓存配置-redis
+CACHES={
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379',
+        'OPTIONS': {
+            'CLIENT_CLASS':'django_redis.client.DefaultClient',
+            #密码设置
+            #‘PASSWORD’:'123456'
+        }
+    }
+}

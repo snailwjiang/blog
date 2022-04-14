@@ -40,7 +40,7 @@ class UserView(View):
                 result = {'code': 200, 'username': user.username,
                           'data': {'info': user.info,
                                    'sign': user.sign,
-                                   'nikename': user.nikename,
+                                   'nickname': user.nikename,
                                    # str返回路径信息
                                    'avatar': str(user.avatar)}}
             return JsonResponse(result)

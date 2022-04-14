@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'user',
     'btoken',
+    'topic',
+    'message',
 ]
 
 MIDDLEWARE = [

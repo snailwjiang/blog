@@ -28,3 +28,15 @@ def login_check(fn):
         #调用装饰器修饰的函数
         return fn(request,*args,**kwargs)
     return warp
+
+def get_user_by_request(request):
+    token = request.META.get('HTTP_AUTHORIZATION')
+    if not token:
+        return None
+    # 验证token,(要考虑token的安全性)
+    try:
+        payload = jwt.decode(token, settings.JWT_TOKEN_KEY)
+    except Exception as e:
+        return None
+    username = payload['username']
+    return username

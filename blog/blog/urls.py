@@ -22,9 +22,12 @@ from btoken import views as btoken_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('v1/users',user_views.UserView.as_view()),
+    path('v1/users', user_views.UserView.as_view()),
     path('v1/tokens', btoken_views.TokenView.as_view()),
-    path('v1/users/',include('user.urls'))
+    path('v1/users/', include('user.urls')),
+    path('v1/topics/', include('topic.urls')),
+    path('v1/messages/', include('message.urls')),
+
 ]
 
-urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
